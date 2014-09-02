@@ -30,8 +30,8 @@ function writeandreturn($name,$header,$result){
 
 function reportA() {
 //    global $conn;
-	$header = array('SchoolYearCode', 'UWT', 'TRADITIONAL', 'Gender', 'Ethnicity', 'Count');
-    $query = "select SchoolYearCode, 'UWT' as UWT, 'TRADITIONAL' as TRADITIONAL, Gender, Ethnicity, count(personID) as Count ";
+	$header = array('SchoolYearCode', 'InstitutionCode', 'TRADITIONAL', 'Gender', 'Ethnicity', 'Count');
+    $query = "select SchoolYearCode, '238' as InstitutionCode, 'TRADITIONAL' as TRADITIONAL, Gender, Ethnicity, count(personID) as Count ";
     $query .= "from working_in_WA_Jan2014 w ";
     $query .= "join people p on p.CertNum = w.certificatenumber ";
     $query .= "group by SchoolYearCode, Gender, Ethnicity";
